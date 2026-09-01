@@ -1,5 +1,6 @@
 # 忽略 bin 文件夹（里面放 exe 的）
 bin/
+.vscode/
 
 *简介模板.txt
 *.exe

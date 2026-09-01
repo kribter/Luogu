@@ -49,6 +49,24 @@ void draw(int x, int y, int n)
 
 int main()
 {
+    memset(map, ' ', sizeof(map));
+    int n;
+    scanf("%d", &n);
+    draw(0, 0, n);
+
+    int size = pow2(n);
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 1; j < size - i; j++)
+        {
+            printf(" ");
+        }
+        for (int j = 0; j < (i + 1) * 2; j++)
+        {
+            printf("%c", map[i][j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }
