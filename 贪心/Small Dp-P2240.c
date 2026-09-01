@@ -1,3 +1,11 @@
+/*
+ * P2240 【深基12.例1】部分背包问题
+ * 难度：易
+ * 核心思路：贪心，每次选密度最大的
+ * 关键点：排序。贪心，背包大小不足的处理
+ * 坑点：int/int得到的还是int，要进行（float）转换
+ */
+
 #include <stdio.h>
 #include <stdlib.h> // qsort
 
@@ -27,6 +35,8 @@ int main()
     {
         // 计算密度
         scanf("%d %d", &golds[i].m, &golds[i].v);
+
+        // 注意这里的float
         golds[i].p = (float)golds[i].v / golds[i].m;
     }
 
