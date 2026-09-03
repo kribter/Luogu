@@ -32,6 +32,7 @@ void Add(int w, P *head)
         q = q->next;
     }
 
+    // 创建新节点并插入
     P *newNode = (P *)malloc(sizeof(P));
     newNode->w = w;
     newNode->next = q->next;
@@ -45,11 +46,15 @@ int Conbine(P *head)
     P *q = head->next;
     while (q != NULL && q->next != NULL)
     {
+        // 求新节点值
         tmp = q->w + q->next->w;
-        head->next = q->next->next;
         ans += tmp;
+
+        // 更新链表
+        head->next = q->next->next;
         Add(tmp, head);
         q = head->next;
+
         tmp = 0;
     }
     return ans;
