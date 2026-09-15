@@ -112,3 +112,46 @@ int main()
 
     return 0;
 }
+
+/*不用二分的双指针解法
+
+int main()
+{
+    int n, c;
+    scanf("%d %d", &n, &c);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &num[i]);
+    qsort(num, n, sizeof(int), cmp);
+
+    long long ans = 0;
+    int i = 0, j = 0;
+    while (i < n)
+    {
+        // 统计当前 B 的重复次数
+        int b = num[i];
+        int cntB = 0;
+        while (i < n && num[i] == b)
+        {
+            cntB++;
+            i++;
+        }
+        // 移动 j 到第一个 >= b + c 的位置
+        int target = b + c;
+        while (j < n && num[j] < target)
+            j++;
+        if (j < n && num[j] == target)
+        {
+            // 统计 A 的重复次数
+            int cntA = 0;
+            int k = j;
+            while (k < n && num[k] == target)
+            {
+                cntA++;
+                k++;
+            }
+            ans += (long long)cntB * cntA;
+        }
+    }
+    printf("%lld\n", ans);
+    return 0;
+}*/
