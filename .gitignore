@@ -1,5 +1,6 @@
 bin/
 .vscode/
+.workbuddy/
 
 *简介模板.txt
 *.exe

@@ -3,7 +3,7 @@
  * 难度：一般
  * 关键点：贪心，字符串排序
  * 核心思路：让ab=sa+sb，ba=sb+sa，比较ab和ba就知道sa和sb谁在前了
- * 坑点：cmo排序
+ * 坑点：cmp排序
  */
 
 #include <stdio.h>

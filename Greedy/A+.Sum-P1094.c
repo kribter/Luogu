@@ -29,10 +29,13 @@ int main()
         scanf("%d", &v[i]);
     }
 
+    // 排序
     qsort(v, n, sizeof(int), cmp);
 
+    // 开始配对
     int ans = 0;
     int left = 0, right = n - 1;
+    // 经可能的配对。配不了就下一个
     while (left <= right)
     {
         if (v[left] + v[right] <= max)
